@@ -1,0 +1,21 @@
+Edit baseDir in compile_main.sh to point to the base folder of the git repo (laph_build_and_run) 
+
+To run the baryon observables code, make sure installation suceeded according to the master branch of the project.
+
+Then modify compile_main.sh to point to your installation directories.
+
+------------------------------------------------------------------------------
+Note that
+{Lx, Ly, Lz, Nt and Nvec} are defined in the input.in textfile. 
+{Nvec_snk, Nvec_src} are for the number of vector cutoff for perambulators.
+For ex, if Nvec_snk < Nvec, the sink eigenvectors larger than Nvec_snk are ignored and becomes zeros, 
+but there's no gain in the number of floating point calculations. 
+
+See run_test_Lx4Lt8/input_singlesource_Nvec4.in as an example
+
+------------------------------------------------------
+To compile, 
+sh compile_main.sh Nc correlation_basis_string
+ex) compile_main.sh 4 T2gSz2_0_x_EgSz2_0 will generate the executable ./main_Nc4_T2gSz2_0_x_EgSz2_0_gpu.exe
+./main_Nc4_T2gSz2_0_x_EgSz2_0_gpu.exe input.in > output.txt 2>&1
+
