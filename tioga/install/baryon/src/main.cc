@@ -236,11 +236,16 @@ int main(int argc, char *argv[]){
     // load perambulators i
     vector<string> taufnames(Nt);
     std::vector<MatrixXcd> tau(Nt*Nt*Nd*Nd,MatrixXcd::Zero(Nvec,Nvec));
-    for(const auto &t: peram_sources){
-      std::ostringstream oss;
-      oss << perambulator_filebase << t << "_cfg" << cfg << ".sdb";
-      get_tau( oss.str(), tau);
-    }
+    if (perambulator_filebase=="DUMMY")
+      {
+	std::cout << "Use dummy values for perambulators" << std::endl; 
+      }
+    else
+      for(const auto &t: peram_sources){
+	std::ostringstream oss;
+	oss << perambulator_filebase << t << "_cfg" << cfg << ".sdb";
+	get_tau( oss.str(), tau);
+      }
   
     //--------------------------------------------------------------
     // Compute omega, 
@@ -285,7 +290,15 @@ int main(int argc, char *argv[]){
     }
 
     vector<MatrixXcd> evectors;	   // [t][i][ color*vol + site ] ordering
-    get_evecs(fnames, evectors, t_all_list);
+    if (fnames_base=="DUMMY")
+      {
+	std::cout << "Use dummy values for eigenvectors" << std::endl; 
+	dummy_evecs(fnames, evectors, t_all_list);
+      }
+    else
+      {
+	get_evecs(fnames, evectors, t_all_list);
+      }
     // vector<MatrixXcd> evectors_v2; // [t][i][ site*Nc + color  ] ordering
     // get_evecs_v2(fnames, evectors_v2, t_all_list);
     // t_all_list = unique_dts;

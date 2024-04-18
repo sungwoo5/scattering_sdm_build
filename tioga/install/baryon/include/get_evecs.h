@@ -228,6 +228,34 @@ void get_evecs(vector<string> &filenames, vector<MatrixXcd> &evectors, vector<in
     } // end loop over timeslices 
 }
 
+// put dummy 1.0 values into evecs
+void dummy_evecs(vector<string> &filenames, vector<MatrixXcd> &evectors, vector<int> &t_all_list){ 
+    for(auto t: t_all_list){// t!=Nt_all; t++){
+      evectors.push_back(MatrixXcd::Zero(Nvec, Lx*Lx*Lx*Nc));
+      //for(int i; i<Nvec; i++){
+      //  evectors_spatial(t,i) = MatrixXcd::Zero(Lx*Lx*Lx, Nc); 
+      //}
+    }
+        
+    // loop over t
+    for(auto t: t_all_list){// t!=Nt_all; t++){
+
+      // loop over distill vecs, find key value (t, distill_vec)
+      for(int vec_num=0; vec_num< Nvec; ++vec_num){
+        
+        //************** fill CPP array *************//
+        // loop over spatial points
+        //MatrixXcd &spatial_color_matrix = evectors_spatial(t, vec_num); // reference to this matrix 
+        for(int site=0; site < Lx*Lx*Lx; site++){
+          // loop over color 
+          for(int color=0; color < Nc; color++){
+            evectors[t](vec_num, v_ind(color, site)) = complex<double>(1.0,0.0);
+          } // end loop over color 
+        } // end loop over sites
+      } // end loop over Dist evecs 
+    } // end loop over timeslices 
+}
+
 
 int v_ind_v2(int color, int site){
     // position * Nc + color 
