@@ -1,0 +1,17 @@
+cfg=0
+PerambulatorFileBase=test_Lx4Lt8/perambulators_k0p1515_LapH_8vecs_tsource
+peram_sources=0
+EvecFileBase=test_Lx4Lt8/LapH_8vecs_
+NDIAGS=864
+mom=0 0 0
+gammas=GAMMAS/baryon_uuuu_A1g_0.txt,GAMMAS/baryon_uuuu_T1g0_0.txt,GAMMAS/baryon_uuuu_Eg0_0.txt,GAMMAS/baryon_uuuu_Eg0_1.txt,GAMMAS/baryon_uuuu_Eg1_0.txt,GAMMAS/baryon_uuuu_Eg1_1.txt
+dts=ALL
+ts=0
+DiagramNamesFilename=diagram_names.txt
+Lx=4
+Ly=4
+Lz=4
+Nt=8
+Nvec=8
+Nvec_snk=8
+Nvec_src=8

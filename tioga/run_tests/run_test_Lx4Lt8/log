@@ -1,0 +1,197 @@
+The following modules were not unloaded:
+  (Use "module --force purge" to unload all):
+
+  1) flux_wrappers/0.1   2) StdEnv
+
+Currently Loaded Modules:
+  1) flux_wrappers/0.1       3) craype-accel-amd-gfx90a   5) cce/17.0.1         7) libfabric/2.1        9) cray-mpich/8.1.29    11) PrgEnv-cray/8.5.0
+  2) StdEnv            (S)   4) cmake/3.23.1              6) craype/2.7.31.11   8) craype-network-ofi  10) cray-libsci/24.03.0  12) rocm/6.0.3
+
+  Where:
+   S:  Module is Sticky, requires --force to unload or purge
+
+ 
+
+MPI_CFLAGS= -I/opt/cray/pe/mpich/8.1.29/ofi/crayclang/16.0/include -I/opt/rocm-6.0.3/include
+MPI_LDFLAGS=-Wl,-rpath=/opt/cray/pe/mpich/8.1.29/ofi/crayclang/16.0/lib -L/opt/cray/pe/mpich/8.1.29/ofi/crayclang/16.0/lib -lmpi -Wl,-rpath=/opt/cray/pe/mpich/8.1.29/gtl/lib -L/opt/cray/pe/mpich/8.1.29/gtl/lib -L/opt/rocm-6.0.3/llvm/lib -Wl,-rpath=/opt/rocm-6.0.3/llvm/lib -L/opt/rocm-6.0.3/lib -lmpi -L/opt/cray/pe/mpich/8.1.29/gtl/lib -lmpi_gtl_hsa 
+QDP use OpenMP threading. We have 64 threads
+Affinity reporting not implemented for this architecture
+Initialize done
+   S T A R T   C O D E   
+Read from input:
+  Lx Ly Lz Nt Nvec = 4 4 4 8 4 
+  (perambulator cutoff) Nvec_snk Nvec_src = 4 4 
+Reading spin matrix from file GAMMAS/baryon_uuuu_A1g_0.txt
+Reading spin matrix from file GAMMAS/baryon_uuuu_T1g0_0.txt
+Reading spin matrix from file GAMMAS/baryon_uuuu_Eg0_0.txt
+Reading spin matrix from file GAMMAS/baryon_uuuu_Eg0_1.txt
+Reading spin matrix from file GAMMAS/baryon_uuuu_Eg1_0.txt
+Reading spin matrix from file GAMMAS/baryon_uuuu_Eg1_1.txt
+Reading sparse spin matrix from file GAMMAS/baryon_uuuu_A1g_0.txt
+Reading sparse spin matrix from file GAMMAS/baryon_uuuu_T1g0_0.txt
+Reading sparse spin matrix from file GAMMAS/baryon_uuuu_Eg0_0.txt
+Reading sparse spin matrix from file GAMMAS/baryon_uuuu_Eg0_1.txt
+Reading sparse spin matrix from file GAMMAS/baryon_uuuu_Eg1_0.txt
+Reading sparse spin matrix from file GAMMAS/baryon_uuuu_Eg1_1.txt
+Open store database test_Lx4Lt8/perambulators_k0p1515_LapH_8vecs_tsource0_cfg0.sdb
+TIMER: Started Compute omega
+TIMER: Finished Compute omega ELAPSED=0 ms
+Kimmy edit - previously loading/computing for all t, only want dts. But my fix is hardwired for t0=0
+TIMER: Started Load eigenvectors
+Open store database test_Lx4Lt8/LapH_8vecs_t0_evecs.db
+Open store database test_Lx4Lt8/LapH_8vecs_t1_evecs.db
+Open store database test_Lx4Lt8/LapH_8vecs_t2_evecs.db
+Open store database test_Lx4Lt8/LapH_8vecs_t3_evecs.db
+Open store database test_Lx4Lt8/LapH_8vecs_t4_evecs.db
+Open store database test_Lx4Lt8/LapH_8vecs_t5_evecs.db
+Open store database test_Lx4Lt8/LapH_8vecs_t6_evecs.db
+Open store database test_Lx4Lt8/LapH_8vecs_t7_evecs.db
+dts = 0 1 2 3 4 5 6 7 
+TIMER: Finished Load eigenvectors ELAPSED=7 ms
+
+Start computing T for timeslice 0
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=3876 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=17 ms
+
+Start computing T for timeslice 1
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=28 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=0 ms
+
+Start computing T for timeslice 2
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=28 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=0 ms
+
+Start computing T for timeslice 3
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=27 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=0 ms
+
+Start computing T for timeslice 4
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=27 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=0 ms
+
+Start computing T for timeslice 5
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=27 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=0 ms
+
+Start computing T for timeslice 6
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=27 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=0 ms
+
+Start computing T for timeslice 7
+TIMER: Started Constructing T's with cublas
+TIMER: Finished Constructing T's with cublas ELAPSED=27 ms
+TIMER: Started Constructing T's at source
+TIMER: Finished Constructing T's at source ELAPSED=0 ms
+
+
+======================================
+Start baryon routines for t_sink=0
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=2 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=36 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 0
+TIMER: Finished Contracting diagrams ELAPSED=694 ms
+
+
+======================================
+Start baryon routines for t_sink=1
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=3 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=11 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 1
+TIMER: Finished Contracting diagrams ELAPSED=681 ms
+
+
+======================================
+Start baryon routines for t_sink=2
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=2 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=11 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 2
+TIMER: Finished Contracting diagrams ELAPSED=681 ms
+
+
+======================================
+Start baryon routines for t_sink=3
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=2 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=12 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 3
+TIMER: Finished Contracting diagrams ELAPSED=687 ms
+
+
+======================================
+Start baryon routines for t_sink=4
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=2 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=12 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 4
+TIMER: Finished Contracting diagrams ELAPSED=682 ms
+
+
+======================================
+Start baryon routines for t_sink=5
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=3 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=12 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 5
+TIMER: Finished Contracting diagrams ELAPSED=1106 ms
+
+
+======================================
+Start baryon routines for t_sink=6
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=3 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=11 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 6
+TIMER: Finished Contracting diagrams ELAPSED=1141 ms
+
+
+======================================
+Start baryon routines for t_sink=7
+TIMER: Started Constructing B's with cublas
+TIMER: Finished Constructing B's with cublas ELAPSED=3 ms
+TIMER: Started Constructing Bprops's using sparse spin contraction with GPU (cuBLAS)
+Eigen thread num = -1
+TIMER: Finished Constructing Bprops's using sparse spin contraction with GPU (cuBLAS) ELAPSED=12 ms
+TIMER: Started Contracting diagrams
+compute_diagrams for t0 = 0, dt = 7
+TIMER: Finished Contracting diagrams ELAPSED=1140 ms
+TIMER: Started Print diagrams
+TIMER: Finished Print diagrams ELAPSED=12 ms
+   E N D  C O D E   ---   S U C C E S S !
